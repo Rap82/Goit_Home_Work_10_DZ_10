@@ -1405,70 +1405,168 @@
 
 # ++++++++++++++++++++ Код / Code ++++++++++++++++++++++++++++++++++++
 
-class Animal:  # Створення і реалізація батьківського класу (*суперклас) *Animal. Опис дивись в 4 завдані.
-    '''Батьківський клас *Animal , містить свій контсруктор(__init__)  в якому описано два обовязкових поля *nickname, *weight
-    В даній реалізації , має також два власні методи , 
-    *.say()- пустий метод і 
-    *.change_weight(*ags)- міняє поле *weight на значення *ags в екзеплярі класу *Animal  '''
+# class Animal:  # Створення і реалізація батьківського класу (*суперклас) *Animal. Опис дивись в 4 завдані.
+#     '''Батьківський клас *Animal , містить свій контсруктор(__init__)  в якому описано два обовязкових поля *nickname, *weight
+#     В даній реалізації , має також два власні методи , 
+#     *.say()- пустий метод і 
+#     *.change_weight(*ags)- міняє поле *weight на значення *ags в екзеплярі класу *Animal  '''
     
-    def __init__(self, nickname, weight):
-        self.nickname = nickname
-        self.weight = weight
+#     def __init__(self, nickname, weight):
+#         self.nickname = nickname
+#         self.weight = weight
 
-    def say(self):
-        pass
+#     def say(self):
+#         pass
 
-    def change_weight(self, weight):
-        self.weight = weight
-        return weight
+#     def change_weight(self, weight):
+#         self.weight = weight
+#         return weight
 
 
-class Cat(Animal): # Створення і реалізація субкласу *Cat батьківського класу *Animal. 
-    ''' Субклас *Cat, вданій реалізації , не містить жодного свого поля, всі атрибути наслідує від *Animal.
-    Має тільки модифікований метод *.say() - який, на відміну від батьківського, повертає "Meow",
-    якщо його застосувати до екзепляру *Cat '''
+# class Cat(Animal): # Створення і реалізація субкласу *Cat батьківського класу *Animal. 
+#     ''' Субклас *Cat, вданій реалізації , не містить жодного свого поля, всі атрибути наслідує від *Animal.
+#     Має тільки модифікований метод *.say() - який, на відміну від батьківського, повертає "Meow",
+#     якщо його застосувати до екзепляру *Cat '''
     
-    def say(self): # Модифікований метод *.say() - повертає *"Meow", якщо його застосувати до екзепляру класу *Cat
-        return "Meow"
+#     def say(self): # Модифікований метод *.say() - повертає *"Meow", якщо його застосувати до екзепляру класу *Cat
+#         return "Meow"
 
 
-class CatDog: # Створення і реалізація батьківського класу (*суперклас) *CatDog
-    ''' Батьківський клас *CatDog - (не путати з всіма попердніми *CatDog він з ними не має нічого спільного, ті були підкласами і в інших завданнях ,а цей supperklass )
-    Має свій власний конструктор(__init__) , свої власні два обовязкові поля *nickname, *weight - (ці поля власні, не спадкуються ні відкого хоча називаються аналогічно класу *Anamal)
-    і три власні методи ,
-    *.say() - пустий метод ,
-    *.change_weight(*args) - приймає один аргумент і міняє власне поле *weight на значення в *args для екзеплярів *CatDog ,
-    *.imitcat(*args) -      '''
+# class CatDog: # Створення і реалізація батьківського класу (*суперклас) *CatDog
+#     ''' Батьківський клас *CatDog - (не путати з всіма попердніми *CatDog він з ними не має нічого спільного, ті були підкласами і в інших завданнях ,а цей supperklass )
+#     Має свій власний конструктор(__init__) , свої власні два обовязкові поля *nickname, *weight - (ці поля власні, не спадкуються ні відкого хоча називаються аналогічно класу *Anamal)
+#     і три власні методи ,
+#     *.say() - пустий метод ,
+#     *.change_weight(*args) - приймає один аргумент і міняє власне поле *weight на значення в *args для екзеплярів *CatDog ,
+#     *.imitcat(*args) -      '''
 
-    def __init__(self, nickname, weight):
-        self.nickname = nickname
-        self.weight = weight
+#     def __init__(self, nickname, weight):
+#         self.nickname = nickname
+#         self.weight = weight
 
-    def say(self):
-        pass  
+#     def say(self):
+#         pass  
 
-    def change_weight(self, weight):
-        self.weight = weight
-        return weight
+#     def change_weight(self, weight):
+#         self.weight = weight
+#         return weight
 
-    def imitcat(self, cat_imit):
-        cat_imit_say = cat_imit.say()
-        return cat_imit_say
+#     def imitcat(self, cat_imit):
+#         cat_imit_say = cat_imit.say()
+#         return cat_imit_say
     
     
-# # ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
+# # # ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
 
-cat_original = Cat("Mur-Mur", 15) # Тестовий екзепляр субкласу *Cat Наслідує всі атрибути *Animal, має модифікований метод *say() 
-print(cat_original.nickname, cat_original.weight) # Принтемо результа окремо для полів          #  Mur-Mur 15
-print(cat_original.say(), cat_original.change_weight(7)) # Принтемо результа окремо для методів #  Meow 7
+# cat_original = Cat("Mur-Mur", 15) # Тестовий екзепляр субкласу *Cat Наслідує всі атрибути *Animal, має модифікований метод *say() 
+# print(cat_original.nickname, cat_original.weight) # Принтемо результа окремо для полів          #  Mur-Mur 15
+# print(cat_original.say(), cat_original.change_weight(7)) # Принтемо результа окремо для методів #  Meow 7
 
-cat_imit_CatDog = CatDog("Mur-Gav", 55) # Тестовий екзепляр суперкласу *CatDog , нічого не наслідує, все має своє,
-                    # має унікальний метод *.imitcat(*args) - який повертає результат, той що містить клас який передається як аргумент
-                    # Якщо передати не клаб, або клас, який передається як аргумант, не має методу *.say() - виклкиче системний збій нашого коду  
+# cat_imit_CatDog = CatDog("Mur-Gav", 55) # Тестовий екзепляр суперкласу *CatDog , нічого не наслідує, все має своє,
+#                     # має унікальний метод *.imitcat(*args) - який повертає результат, той що містить клас який передається як аргумент
+#                     # Якщо передати не клаб, або клас, який передається як аргумант, не має методу *.say() - виклкиче системний збій нашого коду  
 
-print(cat_imit_CatDog.nickname, cat_imit_CatDog.weight) # Принтемо результа окремо для полів 
-# Виведе:  Mur-Gav 55
-print(cat_imit_CatDog.say(), cat_imit_CatDog.change_weight(32), cat_imit_CatDog.imitcat(cat_original)) # Принтемо результа окремо для методів #
-# Виведе:  None 32 Meow . де # *None - бо власний метод *.say() - нічого не повертає 
-                             # *32 - бо *.change_weight(32)- міняє власне поле *weight
-                             # *Meow - бо метод *.imitcat(cat_original) містить екзепляр *Cat в якому є модернізований метод *say() який повертає *Meow
+# print(cat_imit_CatDog.nickname, cat_imit_CatDog.weight) # Принтемо результа окремо для полів 
+# # Виведе:  Mur-Gav 55
+# print(cat_imit_CatDog.say(), cat_imit_CatDog.change_weight(32), cat_imit_CatDog.imitcat(cat_original)) # Принтемо результа окремо для методів #
+# # Виведе:  None 32 Meow . де # *None - бо власний метод *.say() - нічого не повертає 
+#                              # *32 - бо *.change_weight(32)- міняє власне поле *weight
+#                              # *Meow - бо метод *.imitcat(cat_original) містить екзепляр *Cat в якому є модернізований метод *say() який повертає *Meow
+
+
+
+# ================================ Звдання 14 / Task 14  ======================================
+
+# ================================   КОНТАКТНА КНИГА, ЧАСТИНА ПЕРША  =======
+
+# ++++++++++++++++++++++++++++++++++++++ Умова / Condition ++++++++++++++++++++++++++++++++++++++++
+
+
+# Реалізуйте клас Contacts, який працюватиме з контактами. На першому етапі ми додамо два методи.
+# list_contacts повертає список контактів це змінна contacts з поточного екземпляра класу
+# add_contacts додає новий контакт до списку, який є змінною об'єкту - contacts
+# Клас Contacts містить змінну класу current_id.
+# Ми будемо використовувати її при додаванні нового контакту як унікального ідентифікатора контакту. 
+# Коли ми додаємо новий контакт, то передаємо такі аргументи в метод add_contacts: name, phone, email та favorite. 
+# Метод повинен створити словник із зазначеними ключами та значеннями параметрів функції. 
+# Також необхідно додати до словника новий ключ id, значенням якого є значення змінної класу current_id.
+
+# Приклад отриманого словника:
+
+#     {
+#     "id": 1,
+#     "name": "Wylie Pope",
+#     "phone": "(692) 802-2949",
+#     "email": "est@utquamvel.net",
+#     "favorite": True,
+# }
+# Вказаний словник ми додаємо до списку contacts.
+# Не забуваймо збільшувати змінну current_id на одиницю після кожного виклику методу add_contacts 
+# для збереження унікальності ключа id для словника.
+# Примітка: для правильного проходження тесту не створюйте екземпляр класу в коді.
+
+# ++++++++++++++++++++++++++++++++++++++ Код / Code ++++++++++++++++++++++++++++++++++++
+
+class Contacts: # Створення і реалізація батьківського класу (*суперклас) *Contacts 
+    '''Батьківський клас *Contacts, має одне не обовязкове поле *current_id - початкове значення 1 .
+    Меє свій конструктор(__init__) з пустим полем,  принймає список, де елементи софрмовані словники власним методом *.add_contacts( name, phone, email, favorite)
+    додає цей словник до списку *contacts, значення якого, по замовчуванню, пустий список
+    Має два своїх методи :
+    *.list_contacts()- без аргументів, повертає поточний список що містить *self.contacts 
+    *.add_contacts( name, phone, email, favorite) - приймає  4 аргументи , 
+                формує словник заданого типу *{"id": 1, "name": "Wylie Pope", "phone": "(692) 802-2949","email": "est@utquamvel.net", "favorite": True}
+                додає його у наш список contacts і повертає відразу список з доданим контактом (тип словник)
+                Тобто наш список *contacts буде містити, як елементи, словникаи заданого типу   '''
+    
+    current_id = 1  # Не обовязкове поле *current_id класу *Contacts . Доступ до поля через метод класу ,*Contacts.current_id
+
+    def __init__(self): # Власний коструктор , без обовязкоdих полів , приймає  список  *self.contacts, Значення за замовчуванням пустий []
+        self.contacts = [] # Посиляння на *self.contacts список , Позамовчуванню пустий.
+
+    def list_contacts(self): # Власний метод *.list_contacts()- без аргументів. Повертає посилання на наш список *self.contacts(примітка, список за межами опису класу) 
+        return self.contacts # Повертаємо посилання на список *self.contacts 
+        
+
+    def add_contacts(self, name, phone, email, favorite): # Власний метод *.add_contacts( name, phone, email, favorite) - містить 4 аргументи - це відповідних ключів словника.
+        '''Власний метод класу *Contacts , приймає 4 аргументи, З них формує відповідного формату словник(формат дивись в умові завдання)
+        Де перша пара з ключ : значення , має наступний вигляда: 'id': Contacts.current_id , Сформований словник додає до нашого списку *self.contacts
+        Збільшує значення поля *current_id на 1 , повертає наш список *self.contacts з методу'''                    
+        
+        contact_dict ={} # Словник в який будемо формувати пари ключ : значення выдповідно до вимог завдання. Початкове значення пустий *{}.
+        contact_dict['id'] = Contacts.current_id # Формуємо першу пару словника *contact_dict, має наступний вигляда: 'id': Contacts.current_id 
+        contact_dict["name"] =  name             # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'name': name
+        contact_dict["phone"] = phone            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'phone': phone 
+        contact_dict["email"] = email            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'email': email
+        contact_dict["favorite"] = favorite      # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'favorite': favorite
+        self.contacts.append(contact_dict)       # LДодаємо наш сформований словик в список *self.contacts
+        Contacts.current_id += 1                 # Змінюємо значення не обовязкового поля *current_id на один.
+        return self.contacts                # Повертаэмо результат.
+
+# Примітка : можна написати красивіше останій метод. Все те саме але красивіше )). Підгледів у інших.
+    # def add_contacts(self, name, phone, email, favorite):
+    #     new_contact = { 
+    #         "id": Contacts.current_id,
+    #         "name": name,
+    #         "phone": phone,
+    #         "email": email,
+    #         "favorite": favorite,
+
+    #     }
+    #     Contacts.current_id += 1
+    #     return self.contacts 
+      
+
+
+# ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
+some_contacts = Contacts() # Екзкпляр класу *Contacts
+
+print(some_contacts.list_contacts()) # Принтимо результат роботи методу *.list_contacts() # *[] , Оскільки ми ще не додавали жодних значень, наш список відповідно порожній. 
+print(some_contacts.add_contacts('Andrew', "(692) 802-2949", "est@utquamvel.net", True )) # Додаємо значення методом *.add_contacts(*name, *phone, *email, *favorite)
+# Принтимо : 
+print(some_contacts.list_contacts()) #  *[{'id': 1, 'name': 'Andrew', 'phone': '(692) 802-2949', 'email': 'est@utquamvel.net', 'favorite': True}]
+
+print(some_contacts.add_contacts('Volodymyr', "(096) 305-1648", "kub@utquamvel.net", True )) # Додаємо ще значення методом *.add_contacts(*name, *phone, *email, *favorite)
+# Принтимо :
+print(some_contacts.list_contacts())
+[{'id': 1, 'name': 'Andrew', 'phone': '(692) 802-2949', 'email': 'est@utquamvel.net', 'favorite': True}, 
+ {'id': 2, 'name': 'Volodymyr', 'phone': '(096) 305-1648', 'email': 'kub@utquamvel.net', 'favorite': True}]
