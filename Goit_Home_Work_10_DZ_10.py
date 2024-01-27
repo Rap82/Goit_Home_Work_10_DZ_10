@@ -1690,7 +1690,7 @@ class Contacts:
         return result[0] if len(result) > 0 else None
 
     def remove_contacts(self, id):
-         for element_dict in self.contacts
+         for element_dict in self.contacts:
             if element_dict["id"] == id:
                  self.contacts.remove(element_dict)
                  return self.contacts
