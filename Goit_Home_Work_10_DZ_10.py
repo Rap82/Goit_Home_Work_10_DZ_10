@@ -1507,56 +1507,126 @@
 
 # ++++++++++++++++++++++++++++++++++++++ Код / Code ++++++++++++++++++++++++++++++++++++
 
-class Contacts: # Створення і реалізація батьківського класу (*суперклас) *Contacts 
-    '''Батьківський клас *Contacts, має одне не обовязкове поле *current_id - початкове значення 1 .
-    Меє свій конструктор(__init__) з пустим полем,  принймає список, де елементи софрмовані словники власним методом *.add_contacts( name, phone, email, favorite)
-    додає цей словник до списку *contacts, значення якого, по замовчуванню, пустий список
-    Має два своїх методи :
-    *.list_contacts()- без аргументів, повертає поточний список що містить *self.contacts 
-    *.add_contacts( name, phone, email, favorite) - приймає  4 аргументи , 
-                формує словник заданого типу *{"id": 1, "name": "Wylie Pope", "phone": "(692) 802-2949","email": "est@utquamvel.net", "favorite": True}
-                додає його у наш список contacts і повертає відразу список з доданим контактом (тип словник)
-                Тобто наш список *contacts буде містити, як елементи, словникаи заданого типу   '''
+# class Contacts: # Створення і реалізація батьківського класу (*суперклас) *Contacts 
+#     '''Батьківський клас *Contacts, має одне не обовязкове поле *current_id - початкове значення 1 .
+#     Меє свій конструктор(__init__) з пустим полем,  принймає список, де елементи софрмовані словники власним методом *.add_contacts( name, phone, email, favorite)
+#     додає цей словник до списку *contacts, значення якого, по замовчуванню, пустий список
+#     Має два своїх методи :
+#     *.list_contacts()- без аргументів, повертає поточний список що містить *self.contacts 
+#     *.add_contacts( name, phone, email, favorite) - приймає  4 аргументи , 
+#                 формує словник заданого типу *{"id": 1, "name": "Wylie Pope", "phone": "(692) 802-2949","email": "est@utquamvel.net", "favorite": True}
+#                 додає його у наш список contacts і повертає відразу список з доданим контактом (тип словник)
+#                 Тобто наш список *contacts буде містити, як елементи, словникаи заданого типу   '''
     
-    current_id = 1  # Не обовязкове поле *current_id класу *Contacts . Доступ до поля через метод класу ,*Contacts.current_id
+#     current_id = 1  # Не обовязкове поле *current_id класу *Contacts . Доступ до поля через метод класу ,*Contacts.current_id
 
-    def __init__(self): # Власний коструктор , без обовязкових полів , приймає  список  *self.contacts, Значення за замовчуванням пустий []
-        self.contacts = [] # Посиляння на *self.contacts список , Позамовчуванню пустий.
+#     def __init__(self): # Власний коструктор , без обовязкових полів , приймає  список  *self.contacts, Значення за замовчуванням пустий []
+#         self.contacts = [] # Посиляння на *self.contacts список , Позамовчуванню пустий.
 
-    def list_contacts(self): # Власний метод *.list_contacts()- без аргументів. Повертає посилання на наш список *self.contacts(примітка, список формується за допомогою власного методу класу ) 
-        return self.contacts # Повертаємо посилання на список *self.contacts 
+#     def list_contacts(self): # Власний метод *.list_contacts()- без аргументів. Повертає посилання на наш список *self.contacts(примітка, список формується за допомогою власного методу класу ) 
+#         return self.contacts # Повертаємо посилання на список *self.contacts 
         
 
-    def add_contacts(self, name, phone, email, favorite): # Власний метод *.add_contacts( name, phone, email, favorite) - містить 4 аргументи - це відповідних ключів словника.
-        '''Власний метод класу *Contacts , приймає 4 аргументи, З них формує відповідного формату словник(формат дивись в умові завдання)
-        Де перша пара з ключ : значення , має наступний вигляда: 'id': Contacts.current_id , Сформований словник додає до нашого списку *self.contacts
-        Збільшує значення поля *current_id на 1 , повертає наш список *self.contacts з методу'''                    
+#     def add_contacts(self, name, phone, email, favorite): # Власний метод *.add_contacts( name, phone, email, favorite) - містить 4 аргументи - це відповідних ключів словника.
+#         '''Власний метод класу *Contacts , приймає 4 аргументи, З них формує відповідного формату словник(формат дивись в умові завдання)
+#         Де перша пара з ключ : значення , має наступний вигляда: 'id': Contacts.current_id , Сформований словник додає до нашого списку *self.contacts
+#         Збільшує значення поля *current_id на 1 , повертає наш список *self.contacts з методу'''                    
         
-        contact_dict ={} # Словник в який будемо формувати пари ключ : значення выдповідно до вимог завдання. Початкове значення пустий *{}.
-        contact_dict['id'] = Contacts.current_id # Формуємо першу пару словника *contact_dict, має наступний вигляда: 'id': Contacts.current_id 
-        contact_dict["name"] =  name             # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'name': name
-        contact_dict["phone"] = phone            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'phone': phone 
-        contact_dict["email"] = email            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'email': email
-        contact_dict["favorite"] = favorite      # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'favorite': favorite
-        self.contacts.append(contact_dict)       # LДодаємо наш сформований словик в список *self.contacts
-        Contacts.current_id += 1                 # Змінюємо значення не обовязкового поля *current_id на один.
-        return self.contacts                # Повертаэмо результат.
+#         contact_dict ={} # Словник в який будемо формувати пари ключ : значення выдповідно до вимог завдання. Початкове значення пустий *{}.
+#         contact_dict['id'] = Contacts.current_id # Формуємо першу пару словника *contact_dict, має наступний вигляда: 'id': Contacts.current_id 
+#         contact_dict["name"] =  name             # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'name': name
+#         contact_dict["phone"] = phone            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'phone': phone 
+#         contact_dict["email"] = email            # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'email': email
+#         contact_dict["favorite"] = favorite      # Формуємо наступну пару словника *contact_dict, має наступний вигляда: 'favorite': favorite
+#         self.contacts.append(contact_dict)       # LДодаємо наш сформований словик в список *self.contacts
+#         Contacts.current_id += 1                 # Змінюємо значення не обовязкового поля *current_id на один.
+#         return self.contacts                # Повертаэмо результат.
 
-# Примітка : можна написати красивіше останій метод. Все те саме але красивіше )). Підгледів у інших.
-    # def add_contacts(self, name, phone, email, favorite):
-    #     new_contact = { 
-    #         "id": Contacts.current_id,
-    #         "name": name,
-    #         "phone": phone,
-    #         "email": email,
-    #         "favorite": favorite,
+# # Примітка : можна написати красивіше останій метод. Все те саме але красивіше )). "Підгледів" у інших.
+#     # def add_contacts(self, name, phone, email, favorite):
+#     #     new_contact = { 
+#     #         "id": Contacts.current_id,
+#     #         "name": name,
+#     #         "phone": phone,
+#     #         "email": email,
+#     #         "favorite": favorite,
 
-    #     }
-    #     Contacts.current_id += 1
-    #     return self.contacts 
+#     #     }
+#     #     Contacts.current_id += 1
+#     #     return self.contacts 
       
 
-# ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
+# # ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
+
+# some_contacts = Contacts() # Екзкпляр класу *Contacts
+
+# print(some_contacts.list_contacts()) # Принтимо результат роботи методу *.list_contacts() # *[] , Оскільки ми ще не додавали жодних значень, наш список відповідно порожній. 
+# print(some_contacts.add_contacts('Andrew', "(692) 802-2949", "est@utquamvel.net", True )) # Додаємо значення методом *.add_contacts(*name, *phone, *email, *favorite)
+# # Принтимо : 
+# print(some_contacts.list_contacts()) #  *[{'id': 1, 'name': 'Andrew', 'phone': '(692) 802-2949', 'email': 'est@utquamvel.net', 'favorite': True}]
+
+# print(some_contacts.add_contacts('Volodymyr', "(096) 305-1648", "kub@utquamvel.net", True )) # Додаємо ще значення методом *.add_contacts(*name, *phone, *email, *favorite)
+# # Принтимо :
+# print(some_contacts.list_contacts())
+# [{'id': 1, 'name': 'Andrew', 'phone': '(692) 802-2949', 'email': 'est@utquamvel.net', 'favorite': True}, 
+#  {'id': 2, 'name': 'Volodymyr', 'phone': '(096) 305-1648', 'email': 'kub@utquamvel.net', 'favorite': True}]
+
+
+# ================================ Звдання 15 / Task 15  ======================================
+
+# ================================   КОНТАКТНА КНИГА, ЧАСТИНА друга  =======
+
+# ++++++++++++++++++++++++++++++++++++++ Умова / Condition ++++++++++++++++++++++++++++++++++++++++
+
+# Продовжуємо розширювати функціональність класу Contacts. На цьому етапі ми додамо до класу метод get_contact_by_id. 
+# Метод повинен шукати контакт по унікальному id у списку contacts та повертати словник з нього із зазначеним ключем id. 
+# Якщо словника із зазначеним id у списку contacts не знайдено, метод повертає None.
+
+# Примітка: для правильного проходження тесту не створюйте екземпляр класу в коді.
+
+# ++++++++++++++++++++++++++++++++++++++ Код / Code ++++++++++++++++++++++++++++++++++++
+
+class Contacts:
+    current_id = 1
+
+    def __init__(self):
+        self.contacts = []
+
+    def list_contacts(self):
+        return self.contacts
+
+    def add_contacts(self, name, phone, email, favorite):
+        self.contacts.append(
+            {
+                "id": Contacts.current_id,
+                "name": name,
+                "phone": phone,
+                "email": email,
+                "favorite": favorite,
+            }
+        )
+        Contacts.current_id += 1
+
+    def get_contact_by_id(self, id):# Власний метод *.get_contact_by_id(*args) - приймає один аргумент *id - це відповідне значення яке може містити ключ "id" словника(елемента списку *self.contacts).
+        '''Власний метод класу *Contacts , приймає один аргументи,  *id - це відповідне значення яке може містити ключ "id" словника(елемента списку *self.contacts).
+          # Дивись формат словника в умові завдання. Проходиться в циклі *for по елементам списку(тпи*dict)
+          Порівнює значеня ключа "id" поточного словника, з переданим у метод значенням *id 
+          якщо значення співпадає, повертає відразу словник що містить ключ з таким значення, інакше повертає *None '''
+#         
+        
+        for element_dict in self.contacts : # Цикл в якому проходимся по елементам нашого списку *self.contacts
+                                            # З поточного словника *element_dict, за ключем "id" повертаємо значення і порівнюємо його з значенням *id з методу.
+                                            # якщо значення з таким ключ є в словнику , повертаємо це словник. Якщо немає берем наступний елемент.
+                                            # Якщо елементи закінчились і жоден не містить даного значення, Цикл завершиться , і метод поверне *автоматом *None
+                                            # Будь яка функція яка не повертає жодного значення , *Повертає None.
+            if element_dict["id"] == id: # Умова перевіряє, чи поточне значення ключа "id" дорівнює переданому в метод значенню *id 
+                
+
+                return element_dict # Якщо умова виконалась ,значить поточний словник містить потрібні нам значення ключа , 
+                     # Повертаємо відразу поточний словник.
+
+# # ++++++++++++++++++++++++++++++++++++++++++++++++++ Тестові значення і виклик функції (не потрібний для автоперевірки.) ++
+        
 some_contacts = Contacts() # Екзкпляр класу *Contacts
 
 print(some_contacts.list_contacts()) # Принтимо результат роботи методу *.list_contacts() # *[] , Оскільки ми ще не додавали жодних значень, наш список відповідно порожній. 
@@ -1569,3 +1639,7 @@ print(some_contacts.add_contacts('Volodymyr', "(096) 305-1648", "kub@utquamvel.n
 print(some_contacts.list_contacts())
 [{'id': 1, 'name': 'Andrew', 'phone': '(692) 802-2949', 'email': 'est@utquamvel.net', 'favorite': True}, 
  {'id': 2, 'name': 'Volodymyr', 'phone': '(096) 305-1648', 'email': 'kub@utquamvel.net', 'favorite': True}]
+
+print(some_contacts.get_contact_by_id(2))# Принтимо результат роботи нашого методу для вже сформованого екзепляру, який містить два словника заданого типу.
+{'id': 2, 'name': 'Volodymyr', 'phone': '(096) 305-1648', 'email': 'kub@utquamvel.net', 'favorite': True} - 
+# Оскільки задане значення *2,  містить другий елемент списку, то його і повертаємо  
